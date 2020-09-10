@@ -1,3 +1,5 @@
+const devMode = process.env.NODE_ENV === 'development';
+
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -28,7 +30,7 @@ let config = {
       }, {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
@@ -42,6 +44,10 @@ let config = {
         }]
       }
     ]
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public'),
+    open: true
   }
 };
 module.exports = config;
