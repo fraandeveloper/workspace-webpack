@@ -2,9 +2,13 @@
 /dist
 /tmp
 /out-tsc
+/public
 
 # dependencies
 /node_modules
 npm-debug.*
 /.firebase
 package-lock.json
+
+#Others
+.vscode
