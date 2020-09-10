@@ -12,3 +12,4 @@ package-lock.json
 
 #Others
 .vscode
+.DS_Store

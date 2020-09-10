@@ -92,11 +92,13 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _base_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _base_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_base_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _assets_images_breaking_benjamin_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -112,6 +114,13 @@ var Generator = /*#__PURE__*/function () {
       var paragraphElement = document.createElement('P');
       paragraphElement.appendChild(textNode);
       return paragraphElement;
+    }
+  }, {
+    key: "createImg",
+    value: function createImg(__source, __width, __height) {
+      var imgElement = new Image(__width, __height);
+      imgElement.src = __source;
+      return imgElement;
     }
   }, {
     key: "createDiv",
@@ -131,7 +140,10 @@ var Generator = /*#__PURE__*/function () {
 
 var gen = new Generator();
 var par = gen.createParagraph('Boo! ƪ(ړײ)ƪ');
+var myImg = gen.createImg(_assets_images_breaking_benjamin_jpg__WEBPACK_IMPORTED_MODULE_1__["default"], 500, 300);
 var div = gen.createDiv(par);
+div.appendChild(myImg);
+console.log('This is my image address', _assets_images_breaking_benjamin_jpg__WEBPACK_IMPORTED_MODULE_1__["default"]);
 document.body.appendChild(div);
 
 /***/ }),
@@ -139,6 +151,14 @@ document.body.appendChild(div);
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/breaking-benjamin.jpg");
 
 /***/ })
 /******/ ]);
