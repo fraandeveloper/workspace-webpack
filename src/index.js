@@ -1,3 +1,4 @@
+import './base.scss';
 class Generator {
   createParagraph(__string) {
     const textNode = document.createTextNode(__string);
