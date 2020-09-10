@@ -4,6 +4,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 
 let config = {
   entry: './src/index.js',
@@ -51,3 +52,9 @@ let config = {
   }
 };
 module.exports = config;
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.plugins.push(
+    new OptimizeCSSAssets() // call the css optimizer (minification)
+  );
+}
