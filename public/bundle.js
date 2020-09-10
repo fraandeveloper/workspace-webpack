@@ -88,21 +88,45 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-function generateComponent() {
-  const element__ = document.createElement('DIV');
-  element__.className = 'container';
-  
-  const paragraph = document.createElement('P');
-  const txt = document.createTextNode('Boo! ƪ(ړײ)ƪ');
-  
-  paragraph.appendChild(txt);
-  element__.appendChild(paragraph);
-  
-  console.log('My JavaScript log.');
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  return element__;
-}
-document.body.appendChild(generateComponent());
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Generator = /*#__PURE__*/function () {
+  function Generator() {
+    _classCallCheck(this, Generator);
+  }
+
+  _createClass(Generator, [{
+    key: "createParagraph",
+    value: function createParagraph(__string) {
+      var textNode = document.createTextNode(__string);
+      var paragraphElement = document.createElement('P');
+      paragraphElement.appendChild(textNode);
+      return paragraphElement;
+    }
+  }, {
+    key: "createDiv",
+    value: function createDiv(__innerNode) {
+      var divElement = document.createElement('DIV');
+
+      if (__innerNode) {
+        divElement.appendChild(__innerNode);
+      }
+
+      return divElement;
+    }
+  }]);
+
+  return Generator;
+}();
+
+var gen = new Generator();
+var par = gen.createParagraph('Boo! ƪ(ړײ)ƪ');
+var div = gen.createDiv(par);
+document.body.appendChild(div);
 
 /***/ })
 /******/ ]);

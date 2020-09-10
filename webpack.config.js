@@ -14,6 +14,15 @@ let config = {
       template: './src/index.html',
       minify: false
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
+  }
 };
 module.exports = config;
