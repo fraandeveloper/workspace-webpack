@@ -1,6 +1,7 @@
 import './base.scss';
 import imgLogoBreakingBenjamin from './assets/images/breaking-benjamin.jpg';
 class Generator {
+
   createParagraph(__string) {
     const textNode = document.createTextNode(__string);
     const paragraphElement = document.createElement('P');
