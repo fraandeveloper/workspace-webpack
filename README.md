@@ -11,7 +11,7 @@ Projeto base para facilitar o start em uma aplicação usando um ambiente avanç
 
 ### 2. Entre no diretório
 
-`$ cd workspace-webpack.git`
+`$ cd workspace-webpack`
 
 ### 3. Instale as dependências:
 `$ npm install`
